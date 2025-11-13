@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="globe-bg"></div>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='fake_news_logo.png') }}" class="logo-img">
+
+        <h1>Welcome 👋</h1>
+        <h3>Enter your name to continue</h3>
+
+        <form action="{{ url_for('start') }}" method="POST">
+            <input type="text" name="username" placeholder="Your Name" required class="username-input">
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+</body>
+
+</html>
