@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="globe-bg"></div>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='fake_news_logo.png') }}" class="logo-img">
+        <h1>Fake News Detector 🚩</h1>
+
+        {% if username %}
+        <h2>Hello, {{ username }} 👋</h2>
+        {% endif %}
+
+        <form action="{{ url_for('predict') }}" method="post">
+            <textarea name="news_text" placeholder="Paste news article text here..." required></textarea>
+            <div class="actions">
+                <button type="submit">Check</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
